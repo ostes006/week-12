@@ -1,14 +1,15 @@
-import requests
+import json,  requests
 
-
+base_url = f"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}"
+api_key = "2704132183eea88753319c6db2c74014"
+city: "Chicago"
 def main():
   # Ask the user for their zip code or city
   location = input("Please enter your zip code or city: ")
 
   # Use the zip code or city name to obtain weather forecast data from openweathermap.org
-  try:
-    api_key = "2704132183eea88753319c6db2c74014"
-    url = f"http://api.openweathermap.org/data/2.5/weather?q={location}&appid={api_key}"
+
+
     response = requests.get(url)
 
     # Validate whether the user entered valid data
